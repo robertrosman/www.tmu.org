@@ -1,0 +1,130 @@
+{% set main_width = theme.layout.main_width|default(8) %}
+{% set aside_width = theme.layout.aside_width|default(4) %}
+{% set rtf = record.templatefields %}
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- the above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="robert rosman">
+    <link rel="icon" href="{{ paths.theme }}img/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ paths.theme }}img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ paths.theme }}img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ paths.theme }}img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ paths.theme }}img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ paths.theme }}img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ paths.theme }}img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ paths.theme }}img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ paths.theme }}img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ paths.theme }}img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ paths.theme }}img/icons//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ paths.theme }}img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ paths.theme }}img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ paths.theme }}img/icons/favicon-16x16.png">
+    <link rel="manifest" href="{{ paths.theme }}manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ paths.theme }}img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>
+      {%- if record.namn is defined %}{{ record.namn|striptags }} | {% endif -%}
+	  {{ app.config.get('general/sitename') -}}
+      {% if record.namn is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif -%}
+    </title>
+    <link href="{{ paths.theme }}css/custom.css" rel="stylesheet">
+    <link href="{{ paths.theme }}css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- html5 shim and respond.js for ie8 support of html5 elements and media queries -->
+    <!--[if lt ie 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="{{ paths.theme }}js/jquery-3.1.1.min.js"></script>
+<!--
+    <script src="{{ paths.theme }}js/magnific.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ paths.theme }}css/magnific-popup.css">
+    <script type="text/javascript">
+      $(document).ready(function() {
+	$('.magnific, div.imageholder a').magnificPopup({
+	    type: 'image'
+	    // other options
+	});
+      });
+    </script>
+    -->
+    {% block headincludes %}
+    {% endblock headincludes %}
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+	      <img src="{{ paths.theme }}img/logo.png" alt="Team Med Uppdrag">
+	    </a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+	      {% setcontent sidor = 'sidor' %}
+	      {% for sida in sidor %}
+		{% if sida.template == "kurser.twig" %}
+		  <li class="dropdown">
+		    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ sida.namn }} <span class="caret"></span></a>
+		    <ul class="dropdown-menu dropdown-menu-left">
+		      {% setcontent kurser = 'kurser' %}
+		      {% for kurs in kurser %}
+			<li class="{{ kurs|current ? ' active' }}"><a href="/kurs/{{ kurs.slug }}">{{ kurs.namn }}</a></li>
+		      {% endfor %}
+		    </ul>
+		  </li>
+		{% else %}
+		  <li class="{{ sida|current ? ' active' }}"><a href="/{{ sida.slug }}">{{ sida.namn }}</a></li>
+		{% endif %}
+	      {% endfor %}
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+    </div><!--/.container-first-->
+        {% block body %}
+
+                    {% block main %}
+                    {% endblock main %}
+
+        {% endblock body %}
+
+    <div class="container-gray footer">
+      <section class="container">
+	<div class="row">
+	  <div class="col-sm-6 col-lg-4 col-lg-offset-2">
+	    {% setcontent kontakt = 'block/kontaktuppgifter' %}
+	    {{ kontakt.text }}
+	  </div>
+	  <div class="col-sm-6 col-lg-4 text-right-sm">
+	    {% setcontent betalning = 'block/bankgiro-och-swish-sidfot' %}
+	    {{ betalning.text }}
+	  </div>
+	</div>
+      </section> <!-- /container -->
+    </div>
+        {% block bottomincludes %}
+        {% endblock bottomincludes %}
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="{{ paths.theme }}js/ie10-viewport-bug-workaround.js"></script>
+  <script src="{{ paths.theme }}js/bootstrap.min.js"></script>
+  </body>
+</html>

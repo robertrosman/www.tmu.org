@@ -1,0 +1,118 @@
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+.container-gray {
+  width: 100%;
+  background-color: @gray-lighter;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media(min-width: @screen-sm) {
+  .text-right-sm {
+    text-align: right;
+  }
+}
+
+.kurs-front {
+  margin-top: 30px;
+  .bg-white {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .smaller-text {
+    font-size: @font-size-base; // Avvakta med att förminska texten...
+    line-height: 1.8;
+  }
+}
+
+.bg-white {
+  background: #fff;
+  padding: 15px;
+}
+
+.image-div {
+  position: relative;
+  h2 {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 6px 30px !important;
+}
+
+.btn-lg {
+  padding: 12px 30px !important;
+}
+
+// Core variables and mixins
+// variables.less is heavily modified to fit the needs of tmu.org
+@import "variables.less";
+@import "mixins.less";
+
+// Reset and dependencies
+@import "normalize.less";
+@import "print.less";
+//@import "glyphicons.less";
+
+// Core CSS
+@import "scaffolding.less";
+@import "type.less";
+@import "code.less";
+@import "grid.less";
+@import "tables.less";
+@import "forms.less";
+@import "buttons.less";
+
+// Components
+@import "component-animations.less";
+@import "dropdowns.less";
+@import "button-groups.less";
+@import "input-groups.less";
+@import "navs.less";
+@import "navbar.less";
+@import "breadcrumbs.less";
+@import "pagination.less";
+@import "pager.less";
+@import "labels.less";
+@import "badges.less";
+@import "jumbotron.less";
+@import "thumbnails.less";
+@import "alerts.less";
+@import "progress-bars.less";
+@import "media.less";
+@import "list-group.less";
+@import "panels.less";
+@import "responsive-embed.less";
+@import "wells.less";
+@import "close.less";
+
+// Components w/ JavaScript
+//@import "modals.less";
+//@import "tooltip.less";
+//@import "popovers.less";
+//@import "carousel.less";
+
+// Utility classes
+@import "utilities.less";
+@import "responsive-utilities.less";

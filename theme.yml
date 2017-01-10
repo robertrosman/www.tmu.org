@@ -1,0 +1,34 @@
+# Här definieras fält som enbart ska visas om respektive template laddas.
+
+templateselect:
+    templates:
+        - name: 'Förstasidan'
+          filename: 'index.twig'
+        - name: 'Lista över våra kurser'
+          filename: 'kurser.twig'
+
+templatefields:
+    index.twig: # Förstasidan
+        jumbotronbild:
+            label: Jumbotronbild (Stor bild längst upp på sidan)
+            type: image
+            extensions: [ gif, jpg, jpeg, png ]
+        jumbotronrubrik:
+            label: Jumbotronrubrik (Rubrik längst upp på sidan)
+            type: text
+        jumbotrontext:
+            label: Jumbotrontext (Text längst upp på sidan)
+            type: html
+            height: 150px
+        jumbotronlank:
+            label: Jumbotronlänk
+            type: text
+        jumbotronlanktext:
+            label: Jumbotronlänktext
+            type: text
+        presentationsrubrik:
+            type: text
+        presentationstext:
+            type: html
+            height: 150px
+

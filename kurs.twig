@@ -1,0 +1,123 @@
+{% extends 'partials/_master.twig' %}
+
+{% block headincludes %}
+
+    <style type="text/css">
+	h3 {
+	    text-align: center;
+	}
+
+	.columns {
+	    columns: 335px 2;
+	}
+    </style>
+{% endblock %}
+
+{% block main %}
+
+    <div class="hero" style="background-image: url({{ image(record.omslagsbild, 1300, 400) }});">
+	<section class="container">
+	  <!-- Main component for a primary marketing message or call to action -->
+	  <div class="jumbotron">
+	    <h1 data-bolt-field="namn">Bibelskola LIVSKRAFT</h1>
+	    En del av <a href="{{ record.folkhogskolelank }}" data-bolt-field="folkhogskola">{{ record.folkhogskola }}</a>
+	  </div>
+	</section>
+    </div>
+
+
+
+    <div class="container-gray">
+    <section class="container ">
+
+
+
+
+      <div class="row row-bottom-gutter">
+	  <div class="col-md-8">
+	      <div class="bg-white">
+		  <div data-bolt-field="visionstext">
+		      {{ record.visionstext }}
+		  </div>
+	      		<a href="#">Visa hela texten <span class="caret"></span></a>
+	      <h2>
+	      
+	      Bibelskola Livskraft
+	      </h2>
+	      <p>
+ 
+Bibelskola Livskraft är en lärjungaskola som vill prägla dig för resten av ditt liv. Den ligger på Ralingsåsgården, på landet utanför Aneby. I fokus står Gudsbilden och efterföljelse till Jesus. I ljuset av vem Gud är får allt rätta perspektiv. Därför kan ett år på bibelskolan innebära upprättelse och helande. Året fylls av utmaningar, för bibelskolan finns för att utrusta kristna för tjänst.
+ 
+</p>
+<p>
+Bibelskola Livskraft är en klass med två inriktningar. En bibelinriktning och en lovsångsledarinriktning. Mycket av undervisningen ges i helklass, men vissa kursdagar är klassen delad.  
+	      </p>
+	      </div>
+	  </div>
+	  <div class="col-md-4">
+	      <div class="bg-white">
+		  <a href="#" class="btn btn-info btn-block">ANSÖK NU</a>
+		  Sista ansökningsdag är 25/4. Antagning sker löpande så tveka inte, ansök idag!
+	      </div>
+	  </div>
+      </div>
+    
+      <!--
+      <div class="row row-bottom-gutter">
+      	<div class="col-sm-6">
+      		<div class="bg-white">
+		
+		    <h3 data-bolt-field="inriktning1rubrik">{{ record.inriktning1rubrik }}</h3>
+		    <div data-bolt-field="inriktning1text">{{ record.inriktning1text }}</div>
+		
+		</div>
+      	</div>
+      	<div class="col-sm-6">
+      		<div class="bg-white">
+	    
+		    <h3 data-bolt-field="inriktning2rubrik">{{ record.inriktning2rubrik }}</h3>
+		    <div data-bolt-field="inriktning2text">{{ record.inriktning2text }}</div>
+		
+		</div>
+      	</div>
+      </div>
+
+      -->
+      <div class="row row-bottom-gutter">
+	
+      {% for inriktning in record.inriktningar %}
+      	<div class="col-sm-6">
+      		<div class="bg-white">
+		
+		    <h3 data-bolt-field="inriktningar[{{ loop.index0 }}][rubrik]">{{ inriktning.rubrik }}</h3>
+		    <div data-bolt-field="inriktningar[{{ loop.index0 }}][text]">{{ inriktning.text|raw }}</div>
+		</div>
+      	</div>
+	{% endfor %}
+      </div>
+
+
+
+
+
+      <div class="row row-bottom-gutter">
+      	<div class="col-lg-12">
+
+	    <div class="bg-white">
+		<h3 data-bolt-field="generellrubrik">{{ record.generellrubrik }}</h3>
+ 
+		<div class="columns" data-bolt-field="generellt">{{ record.generellt }}</div>
+	    </div>
+	
+	
+	</div>
+      </div>
+
+
+
+
+    </section> <!-- /container -->
+
+    </div>
+
+{% endblock main %}
