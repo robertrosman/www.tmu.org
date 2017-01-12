@@ -9,13 +9,13 @@
 			<div class="col-sm-6 col-md-4 kurs-front">
 			 <a href="kurs/{{ kurs.slug }}">
 			  <div class="image-div">
-				  <img src="{{ kurs.bild|image(400, 175) }}" class="img-responsive">
+				  <img src="{{ kurs.omslagsbild|image(400, 175) }}" class="img-responsive">
 				  <h2>{{ kurs.namn }}</h2>
 			  </div>
 			 </a>
 			<div class="bg-white">
 			 <div class="smaller-text">
-			  {{ kurs.teaser }}
+			  {{ kurs.omslagstext }}
 			 </div>
 			 <a href="kurs/{{ kurs.slug }}" class="btn btn-info btn-block">LÄS MER</a>
 			</div>
