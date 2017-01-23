@@ -7,14 +7,9 @@
 	  <!-- Main component for a primary marketing message or call to action -->
 	  <div class="jumbotron">
 	    <h1 data-bolt-field="templatefields[jumbotronrubrik]">{{ rtf.jumbotronrubrik }}</h1>
-	    <div data-bolt-field="templatefields[jumbotrontext]">
+	    <h2 data-bolt-field="templatefields[jumbotrontext]">
 	      {{ rtf.jumbotrontext }}
-	    </div>
-	    {% if rtf.jumbotronlank != "" %}
-	    <p>
-		<a class="btn btn-lg btn-primary" href="{{ rtf.jumbotronlank }}" role="button">{{ rtf.jumbotronlanktext }}</a>
-	    </p>
-	    {% endif %}
+	    </h2>
 	  </div>
 	</section>
     </div>
@@ -35,8 +30,51 @@
     </section> <!-- /container -->
 
 
+    <div class="container-gray">
+    	<section class="container">
+	  <h1 class="text-center">Utvalda kurser</h1>
+	  <!--
+	      <div class="row">
+		{% setcontent kurser = 'kurser' %}
+		{% for kurs in kurser %}
+		<div class="col-sm-6 col-md-4 kurs-front">
+		 <a href="kurs/{{ kurs.slug }}">
+		  <div class="image-div">
+			  <img src="{{ kurs.omslagsbild|image(680, 520) }}" class="img-responsive">
+			  <h2>{{ kurs.namn }}</h2>
+		  </div>
+		 </a>
+		<div class="bg-white">
+		 <div class="smaller-text">
+		  {{ kurs.omslagstext }}
+		 </div>
+		 <a href="kurs/{{ kurs.slug }}" class="btn btn-info btn-block">LÄS MER</a>
+		</div>
+		</div>
+		{% endfor %}
+	      </div>
+	  -->
 
-    {% include 'partials/_kurser.twig' %}
+
+
+		{% setcontent kurser = 'kurser' %}
+		{% for kurs in kurser %}
+	     <a href="kurs/{{ kurs.slug }}">
+	      <div class="row row-bottom-gutter bg-white kurs-front">
+	      	<div class="col-sm-6 col-md-4 col-no-gutter">
+		  <img src="{{ kurs.omslagsbild|image(680, 520, 'c') }}" class="img-responsive">
+		</div>
+	      	<div class="col-sm-6 col-md-8 kurs-info">
+		    <h3>{{ kurs.namn }}</h3>
+		    <div>{{ kurs.omslagstext }}</div>
+	      	</div>
+	      </div>
+	     </a>
+		{% endfor %}
+	</section>
+    </div>
+
+    {# todo: % include 'partials/_kurser.twig' %#}
 
 
 
@@ -47,7 +85,7 @@
 	  {% setcontent omoss = 'block/om-oss-teaser' %}
 	  <h1>{{ omoss.rubrik }}</h1>
 	  {{ omoss.text }}
-	 <a href="{{ omoss.lank }}" class="btn btn-info">LÄS MER OM OSS</a>
+	 <a href="{{ omoss.lank }}" class="btn btn-info">Läs mer om oss</a>
 	</div>
       </div>
     </section> <!-- /container -->

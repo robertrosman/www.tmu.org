@@ -4,14 +4,9 @@ section {
   padding: 50px 15px;
 }
 
-body {
-  font-size: 16px;
-  font-family: "Open Sans";
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway";
-  font-weight: 200;
+h1, h2 {
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  /* font-weight: 200; */
 }
 
 .item-header {
@@ -41,13 +36,22 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
 }
 
+.hero h1, .hero h2, .footer h3 {
+  color: #fff;
+}
+
+.hero h1, .footer h1 {
+  font-family: "Hello Stockholm", Helvetica Neue, Helvetica, Arial;
+}
+
 .navbar-brand img {
-  height: 33px;
+  height: 60px;
 }
 
 .lead {
   font-size: inherit !important;
 }
+
 
 /* Responsive Google maps */
 .google-maps {

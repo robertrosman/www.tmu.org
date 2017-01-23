@@ -9,31 +9,38 @@
   background-color: @gray-lighter;
 }
 
-.footer p {
-  margin: 0;
+.footer {
+  background-color: #092938;
+  h1, p {
+    color: #fff;
+  }
+  p {
+    margin: 0;
+  }
 }
 
 @media(min-width: @screen-sm) {
   .text-right-sm {
     text-align: right;
   }
-}
-
-.kurs-front {
-  margin-top: 30px;
-  .bg-white {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .smaller-text {
-    font-size: @font-size-base; // Avvakta med att förminska texten...
-    line-height: 1.8;
-  }
+ .kurs-front .kurs-info {
+   padding-left: 45px;
+   h3 {
+     margin-top: 20px;
+     margin-bottom: 10px;
+   }
+ }
 }
 
 .bg-white {
   background: #fff;
   padding: 15px;
+}
+
+.col-no-gutter {
+  margin: -15px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .image-div {
@@ -53,10 +60,6 @@
   }
 }
 
-h1, h2, h3 {
-  text-transform: uppercase;
-}
-
 .btn {
   padding: 6px 30px !important;
 }
@@ -64,6 +67,8 @@ h1, h2, h3 {
 .btn-lg {
   padding: 12px 30px !important;
 }
+
+
 
 // Core variables and mixins
 // variables.less is heavily modified to fit the needs of tmu.org
