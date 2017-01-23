@@ -36,11 +36,16 @@ h1, h2 {
   background-size: cover;
 }
 
-.hero h1, .hero h2, .footer h3 {
+.hero h1, .hero h2 {
   color: #fff;
 }
 
-.hero h1, .footer h1 {
+.hero h1 {
+  font-family: "Hello Stockholm", Helvetica Neue, Helvetica, Arial;
+}
+
+.footer h1 {
+  font-size: 130px;
   font-family: "Hello Stockholm", Helvetica Neue, Helvetica, Arial;
 }
 
@@ -78,3 +83,16 @@ h1, h2 {
   overflow: hidden;
   border: 0;
 }
+
+@font-face {
+	font-family: 'Hello Stockholm';
+	src: url('../fonts/HelloStockholm-Regular.eot');
+	src: url('../fonts/HelloStockholm-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/HelloStockholm-Regular.woff2') format('woff2'),
+		url('../fonts/HelloStockholm-Regular.woff') format('woff'),
+		url('../fonts/HelloStockholm-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
