@@ -40,17 +40,21 @@ h1, h2 {
   color: #fff;
 }
 
-.hero h1 {
+.hero h1, .footer h1 {
   font-family: "Hello Stockholm", Helvetica Neue, Helvetica, Arial;
 }
 
 .footer h1 {
   font-size: 130px;
-  font-family: "Hello Stockholm", Helvetica Neue, Helvetica, Arial;
 }
 
 .navbar-brand img {
   height: 60px;
+}
+
+#navbar {
+  position: relative;
+	top: 28px;
 }
 
 .lead {
