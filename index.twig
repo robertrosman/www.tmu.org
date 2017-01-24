@@ -33,32 +33,8 @@
     <div class="container-gray">
     	<section class="container">
 	  <h1 class="text-center">Utvalda kurser</h1>
-	  <!--
-	      <div class="row">
-		{% setcontent kurser = 'kurser' %}
-		{% for kurs in kurser %}
-		<div class="col-sm-6 col-md-4 kurs-front">
-		 <a href="kurs/{{ kurs.slug }}">
-		  <div class="image-div">
-			  <img src="{{ kurs.omslagsbild|image(680, 520) }}" class="img-responsive">
-			  <h2>{{ kurs.namn }}</h2>
-		  </div>
-		 </a>
-		<div class="bg-white">
-		 <div class="smaller-text">
-		  {{ kurs.omslagstext }}
-		 </div>
-		 <a href="kurs/{{ kurs.slug }}" class="btn btn-info btn-block">LÄS MER</a>
-		</div>
-		</div>
-		{% endfor %}
-	      </div>
-	  -->
-
-
-
-		{% setcontent kurser = 'kurser' %}
-		{% for kurs in kurser %}
+	    {% for kursId in rtf.utvaldakurser %}
+	    {% setcontent kurs = 'kurser' where { 'id': kursId } returnsingle %}
 	     <a href="kurs/{{ kurs.slug }}">
 	      <div class="row row-bottom-gutter bg-white kurs-front">
 	      	<div class="col-sm-6 col-md-4 col-no-gutter">
@@ -70,7 +46,7 @@
 	      	</div>
 	      </div>
 	     </a>
-		{% endfor %}
+	    {% endfor %}
 	</section>
     </div>
 

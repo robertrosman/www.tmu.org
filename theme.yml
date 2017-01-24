@@ -24,14 +24,14 @@ templatefields:
             label: Jumbotrontext (Text längst upp på sidan)
             type: html
             height: 150px
-        jumbotronlank:
-            label: Jumbotronlänk
-            type: text
-            variant: inline
-        jumbotronlanktext:
-            label: Jumbotronlänktext
-            type: text
-            variant: inline
+#        jumbotronlank:
+#            label: Jumbotronlänk
+#            type: text
+#            variant: inline
+#        jumbotronlanktext:
+#            label: Jumbotronlänktext
+#            type: text
+#            variant: inline
         presentationsrubrik:
             type: text
             variant: inline
@@ -41,6 +41,12 @@ templatefields:
         kurserrubrik:
             type: text
             variant: inline
+        utvaldakurser:
+            type: select
+            values: kurser/id,namn
+            multiple: true
+            sortable: true
+            postfix: "Börja skriva namnet på kursen och välj rätt i listan. Du kan sortera i rätt ordning genom att dra och släppa kursen på rätt ställe."
     om-oss.twig:
         omoss:
             label: Om oss
