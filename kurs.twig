@@ -3,12 +3,11 @@
 {% block headincludes %}
 
     <style type="text/css">
-	h3 {
-	    text-align: center;
-	}
-
 	.columns {
 	    columns: 335px 2;
+	}
+	.columns p {
+	    display: inline-block;
 	}
     </style>
 {% endblock %}
@@ -27,23 +26,13 @@
 
 
 
-    <div class="container-gray">
     <section class="container ">
 
-
-
-
       <div class="row row-bottom-gutter">
+	  <div class="col-md-12">
+	      <h2> {{ record.namn }} </h2>
+	  </div>
 	  <div class="col-md-8">
-	      <div class="bg-white">
-		  <div data-bolt-field="visionstext">
-		      {{ record.visionstext }}
-		  </div>
-	      		<a href="#">Visa hela texten <span class="caret"></span></a>
-	      <h2>
-	      
-	      Bibelskola Livskraft
-	      </h2>
 	      <p>
  
 Bibelskola Livskraft är en lärjungaskola som vill prägla dig för resten av ditt liv. Den ligger på Ralingsåsgården, på landet utanför Aneby. I fokus står Gudsbilden och efterföljelse till Jesus. I ljuset av vem Gud är får allt rätta perspektiv. Därför kan ett år på bibelskolan innebära upprättelse och helande. Året fylls av utmaningar, för bibelskolan finns för att utrusta kristna för tjänst.
@@ -52,46 +41,24 @@ Bibelskola Livskraft är en lärjungaskola som vill prägla dig för resten av d
 <p>
 Bibelskola Livskraft är en klass med två inriktningar. En bibelinriktning och en lovsångsledarinriktning. Mycket av undervisningen ges i helklass, men vissa kursdagar är klassen delad.  
 	      </p>
-	      </div>
 	  </div>
 	  <div class="col-md-4">
-	      <div class="bg-white">
-		  <a href="#" class="btn btn-info btn-block">ANSÖK NU</a>
-		  Sista ansökningsdag är 25/4. Antagning sker löpande så tveka inte, ansök idag!
-	      </div>
+		  <a href="#" class="btn btn-primary btn-block">Sök till utbildningen</a>
+		  <a href="#" class="btn btn-info btn-block">Läs visionstexten</a>
+		  <div class="text-center">
+		      Texten beskriver vår vision med utbildningen och vad vi hoppas att du som elev ska gå igenom under året.
+		  </div>
 	  </div>
       </div>
-    
-      <!--
-      <div class="row row-bottom-gutter">
-      	<div class="col-sm-6">
-      		<div class="bg-white">
-		
-		    <h3 data-bolt-field="inriktning1rubrik">{{ record.inriktning1rubrik }}</h3>
-		    <div data-bolt-field="inriktning1text">{{ record.inriktning1text }}</div>
-		
-		</div>
-      	</div>
-      	<div class="col-sm-6">
-      		<div class="bg-white">
-	    
-		    <h3 data-bolt-field="inriktning2rubrik">{{ record.inriktning2rubrik }}</h3>
-		    <div data-bolt-field="inriktning2text">{{ record.inriktning2text }}</div>
-		
-		</div>
-      	</div>
-      </div>
-
-      -->
+    </section>
+    <div class="container-gray">
+    <section class="container ">
       <div class="row row-bottom-gutter">
 	
       {% for inriktning in record.inriktningar %}
       	<div class="col-sm-6">
-      		<div class="bg-white">
-		
 		    <h3 data-bolt-field="inriktningar[{{ loop.index0 }}][rubrik]">{{ inriktning.rubrik }}</h3>
 		    <div data-bolt-field="inriktningar[{{ loop.index0 }}][text]">{{ inriktning.text|raw }}</div>
-		</div>
       	</div>
 	{% endfor %}
       </div>
@@ -99,17 +66,14 @@ Bibelskola Livskraft är en klass med två inriktningar. En bibelinriktning och 
 
 
 
+    </section>
+  </div>
+    <section class="container ">
 
       <div class="row row-bottom-gutter">
       	<div class="col-lg-12">
-
-	    <div class="bg-white">
-		<h3 data-bolt-field="generellrubrik">{{ record.generellrubrik }}</h3>
- 
+		<h2 class="text-center" data-bolt-field="generellrubrik">{{ record.generellrubrik }}</h2>
 		<div class="columns" data-bolt-field="generellt">{{ record.generellt }}</div>
-	    </div>
-	
-	
 	</div>
       </div>
 
@@ -118,6 +82,43 @@ Bibelskola Livskraft är en klass med två inriktningar. En bibelinriktning och 
 
     </section> <!-- /container -->
 
+      {% if record.inriktningar %}
+      <div class="container-gray">
+	<section class="container ">
+	    <h2 class="text-center row-bottom-gutter">Syfte och mål</h2>
+	  <div class="row row-bottom-gutter">
+      {% for syfte in record.syfte %}
+
+	    <div class="col-sm-3 text-center">
+	      <img src="{{ paths.files }}{{ syfte.ikon }}" class="row-bottom-gutter" width="75" height="75" />
+		<p data-bolt-field="syfte[{{ loop.index0 }}][text]">
+		    {{ syfte.text }}
+		</p>
+	    </div>
+	{% endfor %}
+
+
+	  </div>
+	</section>
+      </div>
+      {% endif %}
+    <section class="container ">
+
+      <div class="row row-bottom-gutter">
+      	<div class="col-lg-12">
+		<h2 class="text-center" data-bolt-field="generellrubrik">Praktisk information</h2>
+		<div class="columns" data-bolt-field="praktiskinfo">
+		
+		  {{ record.praktiskinfo }}
+		
+		</div>
+	</div>
+      </div>
+
+
+
+
+    </section> <!-- /container -->
     </div>
 
 {% endblock main %}
