@@ -1,7 +1,7 @@
 /* Supporting marketing content */
 
 section {
-  padding: 50px 15px;
+  padding: 70px 20px;
 }
 
 h1, h2 {
@@ -15,11 +15,11 @@ h1, h2 {
 }
 
 .row-spacing {
-  margin: 50px 0;
+  margin: 70px 0;
 }
 
 .row-bottom-gutter {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .text-align-center {
