@@ -1,0 +1,35 @@
+{% extends 'partials/_master.twig' %}
+
+{% block headincludes %}
+
+    <style type="text/css">
+	h2 {
+	    text-align: center;
+	    margin-top: 140px;
+	}
+
+	h2:first-child {
+	    margin-top: 35px;
+	}
+
+    
+    </style>
+
+{% endblock headincludes %}
+
+{% block main %}
+
+    <div class="container-gray">
+	<section class="container">
+	  <!-- Main component for a primary marketing message or call to action -->
+	    <h1 class="hello-stockholm-large text-center" data-bolt-field="namn">{{ record.namn }}</h1>
+
+
+	<div class="row row-bottom-gutter">
+	    <div class="col-md-8 col-md-push-2 bg-white" data-bolt-field="templatefields[text]">
+		{{ rtf.text }}
+	    </div>
+	</div>
+      </section>
+    </div>
+{% endblock main %}

@@ -8,6 +8,8 @@ templateselect:
           filename: 'kurser.twig'
         - name: 'Om oss'
           filename: 'om-oss.twig'
+        - name: 'Enkel sida'
+          filename: 'enkel.twig'
 
 templatefields:
     index.twig: # Förstasidan
@@ -76,3 +78,8 @@ templatefields:
 #                    height: 70px
 #
 #
+    enkel.twig:
+        text:
+            label: Innehåll på sidan
+            type: html
+            height: 300px
