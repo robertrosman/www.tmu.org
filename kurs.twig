@@ -54,7 +54,7 @@
 
 
 
-    {% if record.inriktningar %}
+    {% if record.inriktningar|length > 0 %}
     <div class="bg-striped">
       <section class="container ">
 	<div class="row row-bottom-gutter">
@@ -89,7 +89,7 @@
 
 
 
-    {% if record.syfte %}
+    {% if record.syfte|length > 0 %}
       <div class="bg-striped">
 	<section class="container ">
 	  <h2 class="text-center row-bottom-gutter">Syfte och mål</h2>
