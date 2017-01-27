@@ -31,96 +31,102 @@
 
 
 
-    <section class="container ">
+    <div class="bg-striped">
+      <section class="container ">
 
-      <div class="row row-bottom-gutter">
-	  <div class="col-md-12">
-	      <h2> {{ record.namn }} </h2>
-	  </div>
-	  <div class="col-sm-8">
-	    {{ record.introduktionstext }}
-	  </div>
-	  <div class="col-sm-4">
-		  <a href="#" class="btn btn-primary btn-block">Sök till utbildningen</a>
-		  <a href="#" class="btn btn-info btn-block">Läs visionstexten</a>
-		  <div class="text-center">
-		      Texten beskriver vår vision med utbildningen och vad vi hoppas att du som elev ska gå igenom under året.
-		  </div>
-	  </div>
-      </div>
-    </section>
-    <div class="container-gray">
-    <section class="container ">
-      <div class="row row-bottom-gutter">
-	
-      {% for inriktning in record.inriktningar %}
-      	<div class="col-sm-6">
-		    <h3 data-bolt-field="inriktningar[{{ loop.index0 }}][rubrik]">{{ inriktning.rubrik }}</h3>
-		    <div data-bolt-field="inriktningar[{{ loop.index0 }}][text]">{{ inriktning.text|raw }}</div>
-      	</div>
-	{% endfor %}
-      </div>
-
-
-
-
-    </section>
-  </div>
-    <section class="container ">
-
-      <div class="row row-bottom-gutter">
-      	<div class="col-sm-12">
-		<h2 class="text-center" data-bolt-field="generellrubrik">{{ record.generellrubrik }}</h2>
-		<div class="columns" data-bolt-field="generellt">{{ record.generellt }}</div>
+	<div class="row row-bottom-gutter">
+	    <div class="col-md-12">
+		<h2> {{ record.namn }} </h2>
+	    </div>
+	    <div class="col-sm-8">
+	      {{ record.introduktionstext }}
+	    </div>
+	    <div class="col-sm-4">
+		    <a href="#" class="btn btn-primary btn-block">Sök till utbildningen</a>
+		    <a href="#" class="btn btn-info btn-block">Läs visionstexten</a>
+		    <div class="text-center">
+			Texten beskriver vår vision med utbildningen och vad vi hoppas att du som elev ska gå igenom under året.
+		    </div>
+	    </div>
 	</div>
-      </div>
+      </section>
+    </div>
+
+
+
+    <div class="bg-striped">
+      <section class="container ">
+	<div class="row row-bottom-gutter">
+	  
+	{% for inriktning in record.inriktningar %}
+	  <div class="col-sm-6">
+		      <h3 data-bolt-field="inriktningar[{{ loop.index0 }}][rubrik]">{{ inriktning.rubrik }}</h3>
+		      <div data-bolt-field="inriktningar[{{ loop.index0 }}][text]">{{ inriktning.text|raw }}</div>
+	  </div>
+	  {% endfor %}
+	</div>
+      </section>
+    </div>
+
+
+
+    <div class="bg-striped">
+      <section class="container ">
+
+	<div class="row row-bottom-gutter">
+	  <div class="col-sm-12">
+		  <h2 class="text-center" data-bolt-field="generellrubrik">{{ record.generellrubrik }}</h2>
+		  <div class="columns" data-bolt-field="generellt">{{ record.generellt }}</div>
+	  </div>
+	</div>
+      </section> <!-- /container -->
+    </div>
 
 
 
 
-    </section> <!-- /container -->
-
-      {% if record.inriktningar %}
-      <div class="container-gray">
+    {% if record.inriktningar %}
+      <div class="bg-striped">
 	<section class="container ">
-	    <h2 class="text-center row-bottom-gutter">Syfte och mål</h2>
+	  <h2 class="text-center row-bottom-gutter">Syfte och mål</h2>
 	  <div class="row row-bottom-gutter">
-      {% for syfte in record.syfte %}
-
+	  {% for syfte in record.syfte %}
 	    <div class="col-sm-3 text-center">
 	      <img src="{{ paths.files }}{{ syfte.ikon }}" class="row-bottom-gutter" width="75" height="75" />
 		<p data-bolt-field="syfte[{{ loop.index0 }}][text]">
 		    {{ syfte.text }}
 		</p>
 	    </div>
-	{% endfor %}
-
-
+	  {% endfor %}
 	  </div>
 	</section>
       </div>
-      {% endif %}
-    <section class="container ">
+    {% endif %}
 
-      <div class="row row-bottom-gutter">
-      	<div class="col-sm-12">
-		<h2 class="text-center">Praktisk information</h2>
-		<div class="columns" data-bolt-field="praktiskinfo">
-		
-		  {{ record.praktiskinfo }}
-		
-		</div>
+
+
+    <div class="bg-striped">
+      <section class="container ">
+
+	<div class="row row-bottom-gutter">
+	  <div class="col-sm-12">
+		  <h2 class="text-center">Praktisk information</h2>
+		  <div class="columns" data-bolt-field="praktiskinfo">
+		  
+		    {{ record.praktiskinfo }}
+		  
+		  </div>
+	  </div>
 	</div>
-      </div>
+      </section> <!-- /container -->
+    </div>
 
 
 
-
-    </section> <!-- /container -->
     {% if record.personal|length > 0 %}
     {% set smOffset = 'col-sm-push-' ~ (2 - record.personal|length) * 3 %}
     {% set lgOffset = 'col-lg-push-' ~ (3 - record.personal|length) * 2 %}
-    <div class="container-gray">
+    <div class="bg-striped">
       <section class="container ">
 	<h2 class="text-center">Mer information</h2>
 	<p class="text-center">Om du har frågor eller önskar mer information, tveka inte att höra av dig!</p>

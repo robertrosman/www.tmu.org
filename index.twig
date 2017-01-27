@@ -16,21 +16,23 @@
 
 
 
-    <section class="container ">
-      <div class="row">
-	<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-	  
-	  <h1 data-bolt-field="templatefields[presentationsrubrik]">{{ rtf.presentationsrubrik }}</h1>
-	  <div data-bolt-field="templatefields[presentationstext]">
-	    {{ rtf.presentationstext }}
+    <div class="bg-striped">
+	<section class="container ">
+	  <div class="row">
+	    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+	      
+	      <h1 data-bolt-field="templatefields[presentationsrubrik]">{{ rtf.presentationsrubrik }}</h1>
+	      <div data-bolt-field="templatefields[presentationstext]">
+		{{ rtf.presentationstext }}
+	      </div>
+	    </div>
 	  </div>
-	</div>
-      </div>
 
-    </section> <!-- /container -->
+	</section> <!-- /container -->
+    </div>
 
 
-    <div class="container-gray">
+    <div class="bg-striped">
     	<section class="container">
 	  <h1 class="text-center">Utvalda kurser</h1>
 	    {% for kursId in rtf.utvaldakurser %}
@@ -54,17 +56,19 @@
 
 
 
-    <section class="container">
-      <div class="row">
-	<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-	  
-	  {% setcontent omoss = 'block/om-oss-teaser' %}
-	  <h1>{{ omoss.rubrik }}</h1>
-	  {{ omoss.text }}
-	 <a href="{{ omoss.lank }}" class="btn btn-info">Läs mer om oss</a>
-	</div>
-      </div>
-    </section> <!-- /container -->
+    <div class="bg-striped">
+	<section class="container">
+	  <div class="row">
+	    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+	      
+	      {% setcontent omoss = 'block/om-oss-teaser' %}
+	      <h1>{{ omoss.rubrik }}</h1>
+	      {{ omoss.text }}
+	     <a href="{{ omoss.lank }}" class="btn btn-info">Läs mer om oss</a>
+	    </div>
+	  </div>
+	</section> <!-- /container -->
+    </div>
 
 
 
