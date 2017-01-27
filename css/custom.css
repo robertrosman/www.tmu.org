@@ -61,6 +61,46 @@ h1, h2 {
 	top: 28px;
 }
 
+.personal {
+  margin: 40px 0;
+}
+@media (min-width: 550px) {
+	.personal {
+		display: table;
+	}
+
+	.personal > div {
+		display: table-cell;
+		height: 100%;
+		vertical-align: middle;
+	}
+
+	.personal-text {
+		padding-left: 20px;
+	}
+}
+
+@media (max-width: 550px) {
+	.personal-text {
+		text-align: center;
+		margin-top: 20px;
+	}
+}
+
+.personal-bild {
+	width: 150px;
+	margin: 0 auto;
+}
+
+.personal-text h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.personal-text p {
+  line-height: 1.5;
+	margin: 0;
+}
 
 /* Responsive Google maps */
 .google-maps {

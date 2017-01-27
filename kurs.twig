@@ -117,5 +117,21 @@
 
 
     </section> <!-- /container -->
+    {% if record.personal|length > 0 %}
+    {% set smOffset = 'col-sm-push-' ~ (2 - record.personal|length) * 3 %}
+    {% set lgOffset = 'col-lg-push-' ~ (3 - record.personal|length) * 2 %}
+    <div class="container-gray">
+      <section class="container ">
+	<h2 class="text-center">Mer information</h2>
+	<p class="text-center">Om du har frågor eller önskar mer information, tveka inte att höra av dig!</p>
+	<div class="row row-bottom-gutter">
+	  {% for personalId in record.personal %}
+	    {% setcontent personal = 'personal' where { 'id': personalId } returnsingle %}
+	    {% include 'partials/_personal.twig' %}
+	  {% endfor %}
+	</div>
+      </section> <!-- /container -->
+    </div>
+    {% endif %}
 
 {% endblock main %}
