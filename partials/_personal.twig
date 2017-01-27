@@ -1,0 +1,13 @@
+<div class="col-sm-6 {{ smOffset }} col-lg-4 {{ lgOffset }}">
+  <div class="personal">
+	<div class="personal-bild">
+	  <img src="{{ image(personal.bild, 150, 150) }}" alt="" class="img--responsive img-circle">
+	</div>
+	<div class="personal-text">
+		<h4>{{ personal.namn }}</h4>
+		<p>{{ personal.ansvar }}<br/>
+		<a href="mailto:{{ personal.email }}">{{ personal.email }}</a><br/>
+		<a href="tel:{{ personal.telefon }}">{{ personal.telefon }}</a><br/>
+	</div>
+  </div>
+</div>
