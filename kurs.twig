@@ -54,7 +54,7 @@
 
 
 
-    {% if record.inriktningar|length > 0 %}
+    {% if record.inriktningar|length > 0 and record.inriktningar[0].text != "" %}
     <div class="bg-striped">
       <section class="container ">
 	<div class="row row-bottom-gutter">
@@ -72,7 +72,7 @@
 
 
 
-    {% if record.generellt %}
+    {% if record.generellt != "" %}
     <div class="bg-striped">
       <section class="container ">
 
@@ -88,8 +88,7 @@
 
 
 
-
-    {% if record.syfte|length > 0 %}
+    {% if record.syfte|length > 0 and record.syfte[0].text != "" %}
       <div class="bg-striped">
 	<section class="container ">
 	  <h2 class="text-center row-bottom-gutter">Syfte och mål</h2>
@@ -109,7 +108,7 @@
 
 
 
-    {% if record.praktiskinfo %}
+    {% if record.praktiskinfo != "" %}
     <div class="bg-striped">
       <section class="container ">
 
