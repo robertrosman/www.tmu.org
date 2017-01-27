@@ -1,0 +1,55 @@
+{% extends 'partials/_master.twig' %}
+
+
+{% block main %}
+
+    <div class="container-gray">
+	  <section class="container">
+	    <h1 class="hello-stockholm-large text-center" data-bolt-field="namn">Kontakt</h1>
+      </section>
+    </div>
+
+	  <section class="container">
+		<div class="row row-bottom-gutter">
+			<div class="col-lg-8 col-lg-push-2 text-center">
+				<p data-bolt-field="templatefields[intro]">{{ rtf.intro }}</p>
+				<div class="row">
+					<div class="col-sm-4">
+						<h4>Hör av dig</h4>
+						<div data-bolt-field="templatefields[horavdig]">
+							{{ rtf.horavdig }}
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<h4>Besök oss</h4>
+						<div data-bolt-field="templatefields[besokoss]">
+							{{ rtf.besokoss }}
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<h4>Ge en gåva</h4>
+						<div data-bolt-field="templatefields[geengava]">
+							{{ rtf.geengava }}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 hidden-xs">
+			
+			</div>
+		</div>
+      </section>
+
+    <div class="container-gray">
+      <section class="container ">
+		<h2 class="text-center">Personal</h2>
+		<div class="row row-bottom-gutter">
+			{% setcontent personer = 'personal' orderby 'position' %}
+			{% for personal in personer %}
+				{% include 'partials/_personal.twig' %}
+			{% endfor %}
+		</div>
+      </section> <!-- /container -->
+    </div>
+
+{% endblock main %}

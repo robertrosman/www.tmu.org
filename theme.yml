@@ -10,6 +10,8 @@ templateselect:
           filename: 'om-oss.twig'
         - name: 'Enkel sida'
           filename: 'enkel.twig'
+        - name: 'Kontakt'
+          filename: 'kontakt.twig'
 
 templatefields:
     index.twig: # Förstasidan
@@ -83,3 +85,19 @@ templatefields:
             label: Innehåll på sidan
             type: html
             height: 300px
+    kontakt.twig:
+        intro:
+            type: textarea
+            height: 70px
+        horavdig:
+            label: Hör av dig
+            type: html
+            height: 70px
+        besokoss:
+            label: Besök oss
+            type: html
+            height: 70px
+        geengava:
+            label: Ge en gåva
+            type: html
+            height: 70px
