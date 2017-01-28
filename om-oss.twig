@@ -1,0 +1,21 @@
+{% extends 'enkel.twig' %}
+
+{% block content %}
+
+    <h2>Team Med Uppdrag</h2>
+    <div data-bolt-field="templatefields[omoss]">
+	{{ rtf.omoss }}
+    </div>
+
+    <h2>Älska Jesus och lev för andra</h2>
+    <div data-bolt-field="templatefields[alskajesus]">
+	{{ rtf.alskajesus }}
+    </div>
+
+    <div data-bolt-field="templatefields[ovrigtext]">
+	<div class="dummy-first-child"></div>
+	{{ rtf.ovrigtext }}
+    </div>
+
+
+{% endblock content %}

@@ -28,20 +28,6 @@ templatefields:
             label: Jumbotrontext (Text längst upp på sidan)
             type: html
             height: 150px
-#        jumbotronlank:
-#            label: Jumbotronlänk
-#            type: text
-#            variant: inline
-#        jumbotronlanktext:
-#            label: Jumbotronlänktext
-#            type: text
-#            variant: inline
-        presentationsrubrik:
-            type: text
-            variant: inline
-        presentationstext:
-            type: html
-            height: 150px
         kurserrubrik:
             type: text
             variant: inline
@@ -53,33 +39,17 @@ templatefields:
             postfix: "Börja skriva namnet på kursen och välj rätt i listan. Du kan sortera i rätt ordning genom att dra och släppa kursen på rätt ställe."
     om-oss.twig:
         omoss:
-            label: Om oss
+            label: Om oss (samma text som används till startsidan)
             type: html
-            height: 150px
+            height: 200px
         alskajesus:
-            label: Älska Jesus och lev för andra!
+            label: Älska Jesus och lev för andra (samma text som används till startsidan)
             type: html
-            height: 150px
-        langtan:
-            label: TMU:s längtan och mål
+            height: 200px
+        ovrigtext:
+            label: Övrig text
             type: html
-            height: 150px
-        historik:
-            type: html
-            height: 150px
-#        karnvarden:
-#            type: repeater
-#            label: Kärnvärden
-#            fields:
-#                rubrik:
-#                    label: Rubrik
-#                    type: text
-#                    variant: inline
-#                text:
-#                    type: textarea
-#                    height: 70px
-#
-#
+            height: 300px;
     enkel.twig:
         text:
             label: Innehåll på sidan

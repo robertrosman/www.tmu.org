@@ -30,8 +30,12 @@
 
 
 	<div class="row row-bottom-gutter">
-	    <div class="col-md-8 col-md-push-2 bg-white" data-bolt-field="templatefields[text]">
-		{{ rtf.text }}
+	    <div class="col-md-8 col-md-push-2 bg-white">
+		{% block content %}
+		    <div data-bolt-field="templatefields[text]">
+			{{ rtf.text }}
+		    </div>
+		{% endblock content %}
 	    </div>
 	</div>
       </section>
