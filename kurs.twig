@@ -37,9 +37,9 @@
 	    </div>
 	    <div class="col-sm-5 col-md-4">
 		    <a href="#" class="btn btn-primary btn-block">Sök till utbildningen</a>
-		    <a href="#" class="btn btn-info btn-block">Läs visionstexten</a>
+		    <a class="btn btn-info btn-block" data-toggle="modal" data-target="#visionstexten">Läs visionstexten</a>
 		    <div class="text-center">
-			Texten beskriver vår vision med utbildningen och vad vi hoppas att du som elev ska gå igenom under året.
+			Visionstexten beskriver vår vision med utbildningen och vad vi hoppas att du som elev ska gå igenom under året.
 		    </div>
 	    </div>
 	</div>
@@ -158,4 +158,24 @@
     </div>
     {% endif %}
 
+
+
+
+    <!-- Visionstexten i modal -->
+    <div class="modal fade" id="visionstexten" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+	<div class="modal-content">
+	  <div class="modal-body">
+	    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    <h2 class="modal-title text-center">Visionstexten</h2>
+	    <div data-bolt-field="visionstext">
+	      {{ record.visionstext }}
+	    </div>
+	    <div class="text-right">
+	      <button type="button" class="btn btn-info" data-dismiss="modal">Stäng</button>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
 {% endblock main %}
