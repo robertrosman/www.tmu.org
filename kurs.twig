@@ -18,9 +18,7 @@
     <div class="hero" style="background-image: url({{ image(record.omslagsbild, 1300, 400) }});">
 	<section class="container text-center">
 	    <h1 data-bolt-field="namn" class="hello-stockholm-large">{{ record.namn }}</h1>
-	    <h3>
-	      <p>En del av <a href="{{ record.folkhogskolelank }}" data-bolt-field="folkhogskola">{{ record.folkhogskola }}</a></p>
-	    </h3>
+	    <h3 data-bolt-field="underrubrik">{{ record.underrubrik }}</h3>
 	  </div>
 	</section>
     </div>
