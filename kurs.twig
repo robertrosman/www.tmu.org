@@ -34,10 +34,10 @@
 	    <div class="col-md-12">
 		<h2> {{ record.namn }} </h2>
 	    </div>
-	    <div class="col-sm-8" data-bolt-field="introduktionstext">
+	    <div class="col-sm-7 col-md-8" data-bolt-field="introduktionstext">
 	      {{ record.introduktionstext }}
 	    </div>
-	    <div class="col-sm-4">
+	    <div class="col-sm-5 col-md-4">
 		    <a href="#" class="btn btn-primary btn-block">Sök till utbildningen</a>
 		    <a href="#" class="btn btn-info btn-block">Läs visionstexten</a>
 		    <div class="text-center">
@@ -74,7 +74,7 @@
 
 	<div class="row row-bottom-gutter">
 	  <div class="col-sm-12">
-		  <h2 class="text-center" data-bolt-field="generellrubrik">{{ record.generellrubrik }}</h2>
+		  <h2 class="content-divider" data-bolt-field="generellrubrik">{{ record.generellrubrik }}</h2>
 		  <div class="columns" data-bolt-field="generellt">{{ record.generellt }}</div>
 	  </div>
 	</div>
@@ -87,7 +87,7 @@
     {% if record.syfte|length > 0 and record.syfte[0].text != "" %}
       <div class="bg-striped">
 	<section class="container ">
-	  <h2 class="text-center row-bottom-gutter">Syfte och mål</h2>
+	  <h2 class="content-divider">Syfte och mål</h2>
 	  <div class="row row-bottom-gutter">
 	  {% for syfte in record.syfte %}
 	    <div class="col-sm-3 text-center">
@@ -110,7 +110,7 @@
 
 	<div class="row row-bottom-gutter">
 	  <div class="col-sm-12">
-		  <h2 class="text-center">Praktisk information</h2>
+		  <h2 class="content-divider">Praktisk information</h2>
 		  <div class="columns" data-bolt-field="praktiskinfo">
 		  
 		    {{ record.praktiskinfo }}
