@@ -5,9 +5,11 @@
 	</div>
 	<div class="personal-text">
 		<h4>{{ personal.namn }}</h4>
-		<p>{{ personal.ansvar }}<br/>
-		<a href="mailto:{{ personal.email }}">{{ personal.email }}</a><br/>
-		<a href="tel:{{ personal.telefon }}">{{ personal.telefon }}</a><br/>
+		<p>
+			{% if personal.ansvar != "" %} {{ personal.ansvar }}<br/> {% endif %}
+			{% if personal.email != "" %} <a href="mailto:{{ personal.email }}">{{ personal.email }}</a><br/> {% endif %}
+			{% if personal.telefon != "" %} <a href="tel:{{ personal.telefon }}">{{ personal.telefon }}</a> {% endif %}
+		</p>
 	</div>
   </div>
 </div>
