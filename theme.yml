@@ -28,9 +28,6 @@ templatefields:
             label: Jumbotrontext (Text längst upp på sidan)
             type: html
             height: 150px
-        kurserrubrik:
-            type: text
-            variant: inline
         utvaldakurser:
             type: select
             values: kurser/id,namn

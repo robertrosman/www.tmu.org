@@ -37,22 +37,14 @@
 	  <h2 class="content-divider">Utvalda kurser</h2>
 	    {% for kursId in rtf.utvaldakurser %}
 	    {% setcontent kurs = 'kurser' where { 'id': kursId } returnsingle %}
-	     <a href="kurs/{{ kurs.slug }}">
-	      <div class="row row-bottom-gutter bg-white kurs-front">
-	      	<div class="col-sm-6 col-md-4 col-no-gutter">
-		  <img src="{{ kurs.omslagsbild|image(680, 520, 'c') }}" class="img-responsive">
-		</div>
-	      	<div class="col-sm-6 col-md-8 kurs-info">
-		    <h3>{{ kurs.namn }}</h3>
-		    <div>{{ kurs.omslagstext }}</div>
-	      	</div>
-	      </div>
-	     </a>
+		{% include 'partials/_kurs-front.twig' %}
 	    {% endfor %}
+	    <div class="text-center">
+	     <a href="/kurser" class="btn btn-info">Visa alla kurser</a>
+	    </div>
 	</section>
     </div>
 
-    {# todo: % include 'partials/_kurser.twig' %#}
 
 
 
