@@ -60,7 +60,7 @@
   </head>
 
   <body>
-
+    
     <div class="container">
 
       <!-- Static navbar -->
@@ -82,7 +82,7 @@
 	      {% setcontent sidor = 'sidor' %}
 	      {% for sida in sidor %}
 		{% if sida.template == "kurser.twig" %}
-		  <li class="dropdown">
+		  <li class="dropdown{{ record.contenttype.singular_slug == 'kurs' ? ' active' }}">
 		    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ sida.namn }} <span class="caret"></span></a>
 		    <ul class="dropdown-menu dropdown-menu-left">
 		      {% setcontent kurser = 'kurser' %}
