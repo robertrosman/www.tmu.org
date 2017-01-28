@@ -4,8 +4,8 @@ templateselect:
     templates:
         - name: 'Förstasidan'
           filename: 'index.twig'
-        - name: 'Lista över våra kurser'
-          filename: 'kurser.twig'
+        - name: 'Lista över våra utbildningar'
+          filename: 'utbildningar.twig'
         - name: 'Om oss'
           filename: 'om-oss.twig'
         - name: 'Enkel sida'
@@ -28,12 +28,12 @@ templatefields:
             label: Jumbotrontext (Text längst upp på sidan)
             type: html
             height: 150px
-        utvaldakurser:
+        utvaldautbildningar:
             type: select
-            values: kurser/id,namn
+            values: utbildningar/id,namn
             multiple: true
             sortable: true
-            postfix: "Börja skriva namnet på kursen och välj rätt i listan. Du kan sortera i rätt ordning genom att dra och släppa kursen på rätt ställe."
+            postfix: "Börja skriva namnet på utbildningen och välj rätt i listan. Du kan sortera i rätt ordning genom att dra och släppa utbildningen på rätt ställe."
     om-oss.twig:
         omoss:
             label: Om oss (samma text som används till startsidan)

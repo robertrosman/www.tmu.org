@@ -1,0 +1,12 @@
+
+<a href="utbildning/{{ utbildning.slug }}">
+	<div class="row row-bottom-gutter bg-white utbildning-front">
+		<div class="col-sm-6 col-md-4 col-no-gutter">
+			<img src="{{ utbildning.omslagsbild|image(680, 520, 'c') }}" class="img-responsive">
+		</div>
+		<div class="col-sm-6 col-md-8 utbildning-info">
+			<h3>{{ utbildning.namn }}</h3>
+			<div>{{ utbildning.omslagstext }}</div>
+		</div>
+	</div>
+</a>

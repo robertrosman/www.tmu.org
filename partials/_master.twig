@@ -81,13 +81,13 @@
             <ul class="nav navbar-nav navbar-right">
 	      {% setcontent sidor = 'sidor' %}
 	      {% for sida in sidor %}
-		{% if sida.template == "kurser.twig" %}
-		  <li class="dropdown{{ record.contenttype.singular_slug == 'kurs' ? ' active' }}">
+		{% if sida.template == "utbildningar.twig" %}
+		  <li class="dropdown{{ record.contenttype.singular_slug == 'utbildning' ? ' active' }}">
 		    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ sida.namn }} <span class="caret"></span></a>
 		    <ul class="dropdown-menu dropdown-menu-left">
-		      {% setcontent kurser = 'kurser' %}
-		      {% for kurs in kurser %}
-			<li class="{{ kurs|current ? ' active' }}"><a href="/kurs/{{ kurs.slug }}">{{ kurs.namn }}</a></li>
+		      {% setcontent utbildningar = 'utbildningar' %}
+		      {% for utbildning in utbildningar %}
+			<li class="{{ utbildning|current ? ' active' }}"><a href="/utbildning/{{ utbildning.slug }}">{{ utbildning.namn }}</a></li>
 		      {% endfor %}
 		    </ul>
 		  </li>

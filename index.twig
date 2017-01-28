@@ -34,13 +34,13 @@
 
     <div class="bg-striped">
     	<section class="container">
-	  <h2 class="content-divider">Utvalda kurser</h2>
-	    {% for kursId in rtf.utvaldakurser %}
-	    {% setcontent kurs = 'kurser' where { 'id': kursId } returnsingle %}
-		{% include 'partials/_kurs-front.twig' %}
+	  <h2 class="content-divider">Utvalda utbildningar</h2>
+	    {% for utbildningId in rtf.utvaldautbildningar %}
+	    {% setcontent utbildning = 'utbildningar' where { 'id': utbildningId } returnsingle %}
+		{% include 'partials/_utbildning-front.twig' %}
 	    {% endfor %}
 	    <div class="text-center">
-	     <a href="/kurser" class="btn btn-info">Visa alla kurser</a>
+	     <a href="/utbildningar" class="btn btn-info">Visa alla utbildningar</a>
 	    </div>
 	</section>
     </div>

@@ -105,6 +105,14 @@ h1, h2 {
 }
 
 
+.columns {
+		columns: 335px 2;
+		column-gap: 40px;
+}
+.columns p {
+		display: inline-block;
+}
+
 
 /* Responsive Google maps */
 .google-maps {
