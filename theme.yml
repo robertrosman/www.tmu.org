@@ -68,3 +68,7 @@ templatefields:
             label: Ge en gåva
             type: html
             height: 70px
+        socialamedier:
+            label: Sociala medier
+            type: html
+            height: 70px

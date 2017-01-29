@@ -81,7 +81,7 @@
             <ul class="nav navbar-nav navbar-right">
 	      {% setcontent sidor = 'sidor' %}
 	      {% for sida in sidor %}
-		{% if sida.template == "utbildningar.twig" %}
+		{% if sida.template == 'utbildningar.twig' %}
 		  <li class="dropdown{{ record.contenttype.singular_slug == 'utbildning' ? ' active' }}">
 		    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ sida.namn }} <span class="caret"></span></a>
 		    <ul class="dropdown-menu dropdown-menu-left">
@@ -112,12 +112,15 @@
 	<h1 class="text-center">Älska Jesus och lev för andra</h1>
 	<div class="row">
 	  <div class="col-sm-4 col-sm-offset-2 col-lg-3 col-lg-offset-3 text-center condensed-paragraphs">
-	    {% setcontent kontakt = 'block/kontaktuppgifter' %}
-	    {{ kontakt.text }}
+	    <h3>Kontakt</h3>
+	    {% setcontent kontakt = 'sida/kontakt' %}
+	    {{ kontakt.templatefields.horavdig }}
 	  </div>
 	  <div class="col-sm-4 text-center condensed-paragraphs">
-	    {% setcontent socialamedier = 'block/sociala-medier-sidfot' %}
-	    {{ socialamedier.text }}
+	    <h3>Sociala medier</h3>
+	    <div{{ record.template == 'kontakt.twig' ? ' data-bolt-field="templatefields[socialamedier]"' }}>
+	      {{ kontakt.templatefields.socialamedier }}
+	    </div>
 	  </div>
 	</div>
       </section> <!-- /container -->
