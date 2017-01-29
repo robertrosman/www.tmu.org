@@ -59,13 +59,17 @@ h1, h2 {
   font-size: 130px;
 }
 
+.navbar-header {
+	margin-top: 15px;
+}
+
 .navbar-brand img {
   height: 60px;
 }
 
 #navbar {
   position: relative;
-	top: 28px;
+	top: 43px;
 }
 
 
