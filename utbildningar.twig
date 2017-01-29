@@ -1,14 +1,28 @@
 {% extends 'partials/_master.twig' %}
 
+{% block headincludes %}
+
+	<style type="text/css">
+		.hello-stockholm-large {
+			padding-bottom: 140px;
+		}
+	</style>
+
+{% endblock headincludes %}
+
+
+
 {% block main %}
 
-<div class="bg-striped">
-	<section class="container">
-		<h2 class="content-divider">Våra utbildningar</h2>
+	<div class="bg-gray">
+	  <section class="container">
+		<h1 class="hello-stockholm-large text-center" data-bolt-field="namn">Utbildningar</h1>
+
 		{% for utbildning in records %}
 			{% include 'partials/_utbildning-front.twig' %}
 		{% endfor %}
-	</section>
-</div>
+	  </section>
+	</div>
 
 {% endblock main %}
+
