@@ -93,6 +93,9 @@ h1, h2 {
 	top: 43px;
 }
 
+.modal-title {
+  margin: 40px 0 !important;
+}
 
 
 
