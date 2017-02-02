@@ -4,126 +4,39 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-.bg-striped:nth-child(even) {
-  background-color: @gray-lighter;
-}
-
-.bg-gray {
-  width: 100%;
-  background-color: @gray-lighter;
-}
-
-.bg-white {
-  background: #fff;
-  padding: 20px;
-}
 
 
-.footer {
-  background-color: #092938;
-  h1, h3, p, a, a:hover {
-    color: #fff;
-  }
-  h3 {
-    letter-spacing: 3px;
-  }
-  p {
-    letter-spacing: 3px;
-  }
-}
-
-@media(min-width: @screen-sm) {
-  .text-right-sm {
-    text-align: right;
-  }
- .utbildning-front .utbildning-info {
-   padding-left: 60px;
-   h3 {
-     margin-top: 10px;
-     margin-bottom: 10px;
-   }
-   p {
-     font-weight: 300;
-   }
- }
-
- .modal-body {
-   padding: 15px 50px !important;
- }
-}
-
-.utbildning-info p {
-  color: @text-color;
-}
-
-.col-no-gutter {
-  margin: -20px;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.image-div {
-  position: relative;
-  h2 {
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    margin: 0;
-    transform: translateY(-50%);
-  }
-  img {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-}
-
-.condensed-paragraphs {
-  margin-bottom: 19.5px;
-}
-
-.condensed-paragraphs p {
-  margin: 0;
-}
 
 
-// Modifications to the standard bootstrap implementation
-.btn {
-  padding: 6px 55px !important;
-  margin-bottom: 20px !important;
-}
 
-.btn-lg {
-  padding: 12px 55px !important;
-}
 
-body, #navbar a{
-  font-weight: 300;
-}
+/* NOTE: Lots of declarations that override standard implementation at the
+ * bottom of this file.
 
-a {
-  font-weight: 400;
-}
 
-h2.content-divider {
-  margin-bottom: 70px !important;
-  text-align: center;
-}
 
-h3, h4 {
-  font-weight: bold !important;
-}
 
-h4 {
-  margin-bottom: 10px !important;
-}
 
-@media(min-width: @screen-lg) {
-  .col-lg-push-1-5 {
-    left: 12.5%;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Core variables and mixins
@@ -177,3 +90,128 @@ h4 {
 // Utility classes
 @import "utilities.less";
 @import "responsive-utilities.less";
+
+.bg-striped:nth-child(even) {
+  background-color: @gray-lighter;
+}
+
+.bg-gray {
+  width: 100%;
+  background-color: @gray-lighter;
+}
+
+.bg-white {
+  background: #fff;
+  padding: 20px;
+}
+
+
+.footer {
+  background-color: #092938;
+  h1 {
+    margin-top: 52px;
+  }
+  h1, h3, p, a, a:hover {
+    color: #fff;
+  }
+  h3 {
+    letter-spacing: 3px;
+    font-weight: 400;
+  }
+  p {
+    letter-spacing: 3px;
+  }
+}
+
+@media(min-width: @screen-sm) {
+  .text-right-sm {
+    text-align: right;
+  }
+ .utbildning-front .utbildning-info {
+   padding-left: 60px;
+   h3 {
+     margin-top: 10px;
+     margin-bottom: 10px;
+   }
+   p {
+     font-weight: 300;
+   }
+ }
+
+ .modal-body {
+   padding: 15px 50px;
+ }
+}
+
+.utbildning-info p {
+  color: @text-color;
+}
+
+.col-no-gutter {
+  margin: -20px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.image-div {
+  position: relative;
+  h2 {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin: 0;
+    transform: translateY(-50%);
+  }
+  img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.condensed-paragraphs {
+  margin-bottom: 19.5px;
+}
+
+.condensed-paragraphs p {
+  margin: 0;
+}
+
+
+// Modifications to the standard bootstrap implementation
+.btn {
+  padding: 6px 55px;
+  margin-bottom: 20px;
+}
+
+.btn-lg {
+  padding: 12px 55px;
+}
+
+body, #navbar a{
+  font-weight: 300;
+}
+
+a {
+  font-weight: 400;
+}
+
+h2.content-divider {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+h3, h4 {
+  font-weight: bold;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+@media(min-width: @screen-lg) {
+  .col-lg-push-1-5 {
+    left: 12.5%;
+  }
+}

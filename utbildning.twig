@@ -16,7 +16,7 @@
     <div class="bg-striped">
       <section class="container ">
 
-	<div class="row row-bottom-gutter">
+	<div class="row">
 	    <div class="col-md-12">
 		<h2> {{ record.namn }} </h2>
 	    </div>
@@ -58,7 +58,7 @@
     {% if record.inriktningar|length > 0 and record.inriktningar[0].text != "" %}
     <div class="bg-striped">
       <section class="container ">
-	<div class="row row-bottom-gutter">
+	<div class="row">
 	  
 	{% for inriktning in record.inriktningar %}
 	  <div class="col-sm-6">
@@ -77,7 +77,7 @@
     <div class="bg-striped">
       <section class="container ">
 
-	<div class="row row-bottom-gutter">
+	<div class="row">
 	  <div class="col-sm-12">
 		  <h2 class="content-divider" data-bolt-field="generellrubrik">{{ record.generellrubrik }}</h2>
 		  <div class="columns" data-bolt-field="generellt">{{ record.generellt }}</div>
@@ -93,7 +93,7 @@
       <div class="bg-striped">
 	<section class="container ">
 	  <h2 class="content-divider">Syfte och mål</h2>
-	  <div class="row row-bottom-gutter">
+	  <div class="row">
 	  {% for syfte in record.syfte %}
 	    <div class="col-sm-3 text-center">
 	      <img src="{{ paths.files }}{{ syfte.ikon }}" class="row-bottom-gutter" width="75" height="75" />
@@ -113,7 +113,7 @@
     <div class="bg-striped">
       <section class="container ">
 
-	<div class="row row-bottom-gutter">
+	<div class="row">
 	  <div class="col-sm-12">
 		  <h2 class="content-divider">Praktisk information</h2>
 		  <div class="columns" data-bolt-field="praktiskinfo">

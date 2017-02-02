@@ -23,7 +23,7 @@
 
     <div class="bg-striped">
 	  <section class="container first-section">
-		<div class="row row-bottom-gutter">
+		<div class="row">
 			<div class="col-md-8 col-md-push-2 text-center">
 				<h2>Välkommen till TMU</h2>
 				<p data-bolt-field="templatefields[intro]">{{ rtf.intro }}</p>
@@ -55,7 +55,7 @@
     <div class="bg-striped">
       <section class="container ">
 		<h2 class="text-center">Personal</h2>
-		<div class="row row-bottom-gutter">
+		<div class="row">
 			{% setcontent personer = 'personal' orderby 'position' %}
 			{% for personal in personer %}
 				{% include 'partials/_personal.twig' %}
