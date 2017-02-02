@@ -57,8 +57,9 @@ h1, h2 {
   margin-top: 50px
 }
 
-.hero a {
+.hero a, .hero a:hover {
   text-decoration: underline;
+	color: #fff;
 }
 
 .hero p {
