@@ -18,7 +18,7 @@
 
 	<div class="row">
 	    <div class="col-md-12">
-		<h2> {{ record.namn }} </h2>
+		<h2 id="{{ record.slug }}"> {{ record.namn }} </h2>
 	    </div>
 	    <div class="col-sm-7 col-md-8" data-bolt-field="introduktionstext">
 	      {{ record.introduktionstext }}
@@ -73,7 +73,7 @@
     {% if record.syfte|length > 0 and record.syfte[0].text != "" %}
       <div class="bg-striped">
 	<section class="container ">
-	  <h2 class="content-divider">Syfte och mål</h2>
+	  <h2 id="syfte-och-mal" class="content-divider">Syfte och mål</h2>
 	  <div class="row">
 	  {% for syfte in record.syfte %}
 	    <div class="col-sm-3 text-center">
@@ -96,7 +96,7 @@
 
 	<div class="row">
 	  <div class="col-sm-12">
-		  <h2 class="content-divider">Praktisk information</h2>
+		  <h2 id="praktisk-information" class="content-divider">Praktisk information</h2>
 		  <div class="columns" data-bolt-field="praktiskinfo">
 		  
 		    {{ record.praktiskinfo }}
@@ -114,7 +114,7 @@
     {% if citat|length > 0 %}
       <div class="bg-striped">
 	<section class="container text-center">
-	  <h2 class="content-divider">Sagt om utbildningen</h2>
+	  <h2 id="sagt-om-utbildningen" class="content-divider">Sagt om utbildningen</h2>
 	  <div class="row">
 	    {% for person in citat %}
 	    <div class="col-sm-4 col-lg-3 col-lg-push-1-5">
@@ -134,7 +134,7 @@
     {% set lgOffset = 'col-lg-push-' ~ (3 - record.personal|length) * 2 %}
     <div class="bg-striped">
       <section class="container ">
-	<h2 class="text-center">Mer information</h2>
+	<h2 id="mer-information" class="text-center">Mer information</h2>
 	<p class="text-center">Om du har frågor eller önskar mer information, tveka inte att höra av dig!</p>
 	<div class="row row-bottom-gutter">
 	  {% for personalId in record.personal %}

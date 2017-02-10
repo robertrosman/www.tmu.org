@@ -34,7 +34,7 @@
 
     <div class="bg-striped">
     	<section class="container">
-	  <h2 class="content-divider">Utvalda utbildningar</h2>
+	  <h2 id="utvalda-utbildningar" class="content-divider">Utvalda utbildningar</h2>
 	    {% for utbildningId in rtf.utvaldautbildningar %}
 	    {% setcontent utbildning = 'utbildningar' where { 'id': utbildningId } returnsingle %}
 		{% include 'partials/_utbildning-front.twig' %}
@@ -53,7 +53,7 @@
 	  <div class="row">
 	    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
 	      
-	      <h2>Team Med Uppdrag</h2>
+	      <h2 id="team-med-uppdrag">Team Med Uppdrag</h2>
 	      {{ omoss.templatefields.omoss }}
 	     <a href="/{{ omoss.slug }}" class="btn btn-info">Läs mer om oss</a>
 	    </div>

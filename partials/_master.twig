@@ -8,8 +8,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- the above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
     <meta name="author" content="robert rosman">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ paths.theme }}img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="icon" href="{{ paths.theme }}img/icons/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="{{ paths.theme }}img/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ paths.theme }}img/icons/apple-icon-60x60.png">
@@ -25,9 +27,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{{ paths.theme }}img/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ paths.theme }}img/icons/favicon-16x16.png">
     <link rel="manifest" href="{{ paths.theme }}manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ paths.theme }}img/icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="{{ paths.canonicalurl }}">
     <title>
       {%- if record.namn is defined %}{{ record.namn|striptags }} | {% endif -%}
 	  {{ app.config.get('general/sitename') -}}
